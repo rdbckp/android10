@@ -1,0 +1,36 @@
+name: unduh1
+
+on:
+  workflow_dispatch:
+
+jobs:
+  making-zip:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+
+    - name: Nyoba
+      run: |
+        cd ${GITHUB_WORKSPACE}
+        mkdir -p PLATFORM/prebuilts/gcc/linux-x86/arm/arm-linux-androideabi-4.9
+        cd PLATFORM/prebuilts/gcc/linux-x86/arm/arm-linux-androideabi-4.9
+        wget https://android.googlesource.com/platform/prebuilts/gcc/linux-x86/arm/arm-linux-androideabi-4.9/+archive/refs/heads/android11-release.tar.gz
+        tar xzvf android11-release.tar.gz
+        rm android11-release.tar.gz
+        ls
+        
+    - name: Configure Git
+      run: |
+        git config user.name "github-actions[bot]"
+        git config user.email "actions@github.com"
+        
+    - name: Add and Commit file
+      run: |
+        git add -A
+        git commit -m "initial commit"
+        git push
+        
