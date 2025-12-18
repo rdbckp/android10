@@ -1,0 +1,32 @@
+name: auah
+
+on:
+  workflow_dispatch:
+
+jobs:
+  making-zip:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+
+    - name: Nyoba
+      run: |
+        cd ${GITHUB_WORKSPACE}
+        rm -rf *
+        mv .hid/* .
+        
+    - name: Configure Git
+      run: |
+        git config user.name "github-actions[bot]"
+        git config user.email "actions@github.com"
+        
+    - name: Add and Commit file
+      run: |
+        git add -A
+        git commit -m "initial commit"
+        git push
+        
