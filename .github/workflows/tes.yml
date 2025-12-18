@@ -16,7 +16,8 @@ jobs:
     - name: Nyoba
       run: |
         cd ${GITHUB_WORKSPACE}
-        rm -rf *
+        mkdir ndok
+        mv * ndok
         wget https://github.com/Galaxy-A02-dev/android_kernel_samsung_a02/archive/refs/heads/Android-Q.zip
         ls
         echo ------------lagi--------------
@@ -41,6 +42,7 @@ jobs:
         cd ${GITHUB_WORKSPACE}
         mv android_kernel_samsung_a02-Android-Q/* .
         rm -rf android_kernel_samsung_a02
+        rm -rf ndok
         rm Android-Q.zip
         ls
         echo ------------bentar------------
