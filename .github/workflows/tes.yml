@@ -16,8 +16,7 @@ jobs:
     - name: Nyoba
       run: |
         cd ${GITHUB_WORKSPACE}
-        mkdir -p tempe
-        cd tempe
+        rm -rf tempe
         wget https://github.com/Galaxy-A02-dev/android_kernel_samsung_a02/archive/refs/heads/Android-Q.zip
         ls
         echo ------------bentar------------
@@ -26,15 +25,23 @@ jobs:
         echo ------------bentar------------
         echo ------------bentar------------
         unzip Android-Q.zip ${GITHUB_WORKSPACE}
+        cd ${GITHUB_WORKSPACE}/android_kernel_samsung_a02
+        ls
+        echo ------------bentar------------
+        echo ------------bentar------------
+        echo ------------bentar------------
+        echo ------------bentar------------
+        echo ------------bentar------------
         cd ${GITHUB_WORKSPACE}
+        rm Android-Q.zip
+        mv android_kernel_samsung_a02/* .
+        rm -rf android_kernel_samsung_a02
         ls
         echo ------------bentar------------
         echo ------------bentar------------
         echo ------------bentar------------
         echo ------------bentar------------
         echo ------------bentar------------
-        rm -rf tempe
-        ls
         
     - name: Configure Git
       run: |
