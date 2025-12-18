@@ -1,4 +1,0 @@
-
-#include <dt-bindings/clock/mt6739-clk.h>
-#include "../../k39tv1_bsp_titan_hamster.dts"
-
