@@ -13,6 +13,14 @@ jobs:
     - name: Checkout repository
       uses: actions/checkout@v4
 
+    - name: Add custom directory to PATH
+      run: |
+        cd ${GITHUB_WORKSPACE}
+        echo "${PWD}/PLATFORM/prebuilts/gcc/linux-x86/arm/arm-linux-androideabi-4.9/bin" >> $GITHUB_PATH
+
+    - name: Checking path
+      run: echo $GITHUB_PATH
+    
     - name: build
       run: |
         cd ${GITHUB_WORKSPACE}
@@ -25,14 +33,6 @@ jobs:
         echo zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz
         chmod +x -R PLATFORM
         export GITHUB_PATH=$(pwd)/PLATFORM/prebuilts/gcc/linux-x86/arm/arm-linux-androideabi-4.9/bin:$GITHUB_PATH
-        echo $GITHUB_PATH
-        echo zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz
-        echo zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz
-        echo -------------------------bentar-------------------------
-        echo ----------------------please wait-----------------------
-        echo zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz
-        echo zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz
-        chmod +x build
         ./build
         
     - name: Configure Git
