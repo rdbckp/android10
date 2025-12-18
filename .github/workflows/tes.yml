@@ -31,7 +31,7 @@ jobs:
         echo ------------bentar------------
         echo ------------bentar------------
         echo ------------bentar------------
-        cd android_kernel_samsung_a02
+        cd android_kernel_samsung_a02-Android-Q
         ls
         echo ------------cek---------------
         echo ------------direktori---------
@@ -39,9 +39,9 @@ jobs:
         echo ------------bentar------------
         echo ------------bentar------------
         cd ${GITHUB_WORKSPACE}
-        rm Android-Q.zip
-        mv android_kernel_samsung_a02/* .
+        mv android_kernel_samsung_a02-Android-Q/* .
         rm -rf android_kernel_samsung_a02
+        rm Android-Q.zip
         ls
         echo ------------bentar------------
         echo ------------bentar------------
