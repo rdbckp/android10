@@ -1,0 +1,33 @@
+name: unduh1
+
+on:
+  workflow_dispatch:
+
+jobs:
+  making-zip:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+
+    - name: Nyoba
+      run: |
+        cd ${GITHUB_WORKSPACE}
+        chmod +x -R PLATFORM
+        chmod +x build
+        ./build
+        
+    - name: Configure Git
+      run: |
+        git config user.name "github-actions[bot]"
+        git config user.email "actions@github.com"
+        
+    - name: Add and Commit file
+      run: |
+        git add -A
+        git commit -m "initial commit"
+        git push
+        
