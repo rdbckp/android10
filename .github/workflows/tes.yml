@@ -18,7 +18,8 @@ jobs:
         cd ${GITHUB_WORKSPACE}
         mkdir -p tempe
         cd tempe
-        wget https://github.com/Galaxy-A02-dev/android_kernel_samsung_a02/archive/refs/heads/Android-Q.zip
+        git clone https://github.com/Galaxy-A02-dev/android_kernel_samsung_a02 -b Android-Q
+        rm Android-Q.zip
         echo ------------bentar------------       
         ls
         echo ------------ok dah------------
