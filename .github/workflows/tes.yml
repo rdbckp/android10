@@ -19,8 +19,11 @@ jobs:
         mkdir -p tempe
         cd tempe
         git clone https://github.com/Galaxy-A02-dev/android_kernel_samsung_a02 -b Android-Q
-        rm Android-Q.zip
-        echo ------------bentar------------       
+        echo ------------bentar------------
+        echo ------------bentar------------
+        echo ------------bentar------------
+        echo ------------bentar------------
+        echo ------------bentar------------
         ls
         echo ------------ok dah------------
         
