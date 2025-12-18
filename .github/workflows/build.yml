@@ -15,7 +15,7 @@ jobs:
 
     - name: Add custom directory to PATH
       run: |
-        echo "${GITHUB_WORKSPACE}/PLATFORM/prebuilts/gcc/linux-x86/arm/arm-linux-androideabi-4.9/bin" >> $GITHUB_PATH
+        echo "/PLATFORM/prebuilts/gcc/linux-x86/arm/arm-linux-androideabi-4.9/bin" >> $GITHUB_PATH
 
     - name: Checking path
       run: echo $GITHUB_PATH
