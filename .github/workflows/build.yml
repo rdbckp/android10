@@ -16,6 +16,7 @@ jobs:
     - name: Building kernel
       run: |
         cd ${GITHUB_WORKSPACE}
+        chmod +x build
         ./build
         
     - name: Configure Git
