@@ -16,7 +16,10 @@ jobs:
     - name: Nyoba
       run: |
         cd ${GITHUB_WORKSPACE}
-        rm -rf tempe
+        mkdir auah
+        mv * auah
+        mv auah/.github/workflows/tes.yml .
+        rm -rf auah
         wget https://github.com/Galaxy-A02-dev/android_kernel_samsung_a02/archive/refs/heads/Android-Q.zip
         ls
         echo ------------lagi--------------
@@ -57,6 +60,6 @@ jobs:
     - name: Add and Commit file
       run: |
         git add -A
-        git commit -m "Ready to download"
+        git commit -m "initial commit"
         git push
         
