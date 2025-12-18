@@ -16,8 +16,9 @@ jobs:
     - name: Nyoba
       run: |
         cd ${GITHUB_WORKSPACE}
+        mkdir .hid
+        mv * .hid
         rm -rf *
-        mv .hid/* .
         
     - name: Configure Git
       run: |
