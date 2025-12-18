@@ -13,25 +13,9 @@ jobs:
     - name: Checkout repository
       uses: actions/checkout@v4
 
-    - name: Add custom directory to PATH
-      run: |
-        echo "/PLATFORM/prebuilts/gcc/linux-x86/arm/arm-linux-androideabi-4.9/bin" >> $GITHUB_PATH
-
-    - name: Checking path
-      run: echo $GITHUB_PATH
-    
-    - name: build
+    - name: Building kernel
       run: |
         cd ${GITHUB_WORKSPACE}
-        ls
-        echo zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz
-        echo zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz
-        echo -------------------------bentar-------------------------
-        echo ----------------------please wait-----------------------
-        echo zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz
-        echo zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz
-        chmod +x -R PLATFORM
-        export GITHUB_PATH=$(pwd)/PLATFORM/prebuilts/gcc/linux-x86/arm/arm-linux-androideabi-4.9/bin:$GITHUB_PATH
         ./build
         
     - name: Configure Git
@@ -39,7 +23,7 @@ jobs:
         git config user.name "github-actions[bot]"
         git config user.email "actions@github.com"
         
-    - name: Add and Commit file
+    - name: Add and Commit
       run: |
         git add -A
         git commit -m "initial commit"
