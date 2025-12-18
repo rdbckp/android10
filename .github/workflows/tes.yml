@@ -19,16 +19,22 @@ jobs:
         rm -rf tempe
         wget https://github.com/Galaxy-A02-dev/android_kernel_samsung_a02/archive/refs/heads/Android-Q.zip
         ls
+        echo ------------lagi--------------
+        echo ------------download----------
         echo ------------bentar------------
         echo ------------bentar------------
         echo ------------bentar------------
-        echo ------------bentar------------
-        echo ------------bentar------------
-        unzip Android-Q.zip ${GITHUB_WORKSPACE}
-        cd ${GITHUB_WORKSPACE}/android_kernel_samsung_a02
+        unzip Android-Q.zip
         ls
+        echo ------------cek---------------
+        echo ------------direktori---------
         echo ------------bentar------------
         echo ------------bentar------------
+        echo ------------bentar------------
+        cd android_kernel_samsung_a02
+        ls
+        echo ------------cek---------------
+        echo ------------direktori---------
         echo ------------bentar------------
         echo ------------bentar------------
         echo ------------bentar------------
